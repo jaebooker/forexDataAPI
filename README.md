@@ -1,7 +1,7 @@
-# Stock Prices API
+# FOREX Trading API
 
-A simple API that provides AAPL stock data in a JSON based REST API. This project is in conjunction with the Algoracle Project.
+A simple API that provides FOREX data using Polygon in a JSON based REST API. This project is in conjunction with the Algoracle Project.
 
-Finhub API documentation can be found at:
-    https://finnhub.io/docs/api
+Polygon API documentation can be found at:
+    https://polygon.io/docs
 

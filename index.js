@@ -7,7 +7,7 @@ const port = process.env.PORT || 80
 
 app.get('/', async (req, res) => {
   console.log(req.query);
-  let stocks = await fetch(`https://finnhub.io/api/v1/stock/candle?symbol=AAPL&resolution=1&from=1631022248&to=1631627048&token=${process.env.API_KEY}`)
+  let stocks = await fetch(`https://api.polygon.io/v2/aggs/grouped/locale/global/market/fx/2020-10-14?adjusted=true&apiKey=${process.env.API_KEY}`)
   let stocksResponse = await stocks.json();
 
   // Website you wish to allow to connect
