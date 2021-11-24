@@ -7,14 +7,14 @@ const port = process.env.PORT || 80
 
 app.get('/', async (req, res) => {
   console.log(req.query);
-  let stocks = await fetch(`https://api.polygon.io/v2/aggs/grouped/locale/global/market/fx/2020-10-14?adjusted=true&apiKey=${process.env.API_KEY}`)
+  let stocks = await fetch(`https://api.polygon.io/v2/snapshot/locale/us/markets/stocks/tickers/AAPL?apiKey=${process.env.API_KEY}`)
   let stocksResponse = await stocks.json();
 
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 
   res.send([
-    {response: stocksResponse}
+    {name: "AAPL", price: stocksResponse.ticker.day.c}
   ]);
 })
 
